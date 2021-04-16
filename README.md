@@ -107,6 +107,8 @@ Conference Ranking: Core-B, CCF-C
 I'm not a bad slime! Feel free to contact. I speak Chinese, English, and a little French.
 
 **Twitter** @hzj_se
+
 **Wechat** huangzijie94
+
 **Mail** hzj#mail.ecust.edu.cn
 
