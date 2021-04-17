@@ -8,7 +8,7 @@ East China University of Science and Technology
 
 # Research Interests
 
-Software Engineering is more than a technical issue, in most cases it is tedious. As a former developer, my research goal is to provide practitioners with useful advice and toolchains to make it easier. I also focus on other fish in the sea, e.g., social aspects of development process. 
+Software Engineering is more than a technical challenge, and in most cases it is tedious. As a former developer, my research goal is to provide practitioners with useful advice and toolchains from both societal and technical aspects to make development and maintenance easier. 
 
 * Software Maintainability
   * Code Smell and Anti-Pattern
@@ -77,6 +77,37 @@ Journal Ranking: CCF(CN)-A
 Conference Ranking: Core-B, CCF-C      
 [Open Access](http://ksiresearch.org/seke/seke19paper/seke19paper_61.pdf)      
 
+# Major Venues and Rankings
+Opinions my own. Extended and modified from Prof. [Xiang Chen's list](https://smartse.github.io/group/journal.html) and [CCF's ranking](http://2021.issre.net/Conference-Ranks). 
+## A       
+Venues contain work that make sense in terms of SE. 
+
+A1 TSE    
+A2 ICSE, FSE/ESEC, ASE     
+A3 EMSE    
+A4 ICSME, TOSEM     
+## B      
+Venues publishing papers with notable novelty. 
+
+B1 ICPC(1), ESEM, IST, JSS     
+B2 MSR, IEEE Software     
+B3 SANER, ISSRE, SPE, JCST, 计算机学报       
+B4 SCAM, JSEP, TRel, 软件学报(1)        
+
+## C      
+Most work in such venues are replicable and readable. 
+
+C1 QRS, SQJ, KBS, 计算机研究与发展, 电子学报(1)      
+C2 COMPSAC, APSEC, IJSEKE      
+
+## C-      
+A great number of papers are completed in a rush (for graduation), but sometimes they contain fresh ideas.      
+SEKE(1), IEICE Trans., 小型微型计算机系统(1), 计算机科学
+
+## Interesting Venues
+Such venues are not recommended by Chinese administratives but they are of good quaity.      
+IWoR, QUATIC, MaLTeSQuE, XP, SEAA, SBES, SBCARS, CHASE, ENASE, SATE, PROMISE.        
+The Programming Journal, PeerJ CS, IET Software, The R Journal.         
 
 # Contact
 
