@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Appendix | Zijie Huang</title>
+           <title>Appendix | Zijie Huang</title>
         <meta charset="utf-8">
         <meta name="robots" content="index, follow">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -31,332 +31,629 @@
           }
         </script>
 
+        
+        <style>
+          #filter-container {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          }
+          .filter-group {
+            margin-bottom: 1rem;
+          }
+          .filter-group h5 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #333;
+          }
+#filter-controls {
+            display: grid;
+            /* Auto-fit columns with a minimum width of 250px */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+          }
+#filter-year {
+    max-width: 120px; /* Limit max width to 120px */
+}
+          .filter-group .control-set {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+          }
+          .filter-group .form-group {
+            margin-bottom: 0;
+          }
+          .filter-group label.form-checkbox,
+          .filter-group label.form-select {
+            margin-bottom: 0.25rem;
+            font-size: 0.85rem;
+          }
+          .filter-actions {
+            margin-top: 0.3rem;
+            border-top: 1px solid #dee2e6;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          #filter-results-count {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5755d9;
+          }
+          /* Ensure publication items are treated as blocks for hiding/showing */
+          .pub-item {
+            display: block;
+            margin-bottom: 1.25rem; /* Existing <p> margin */
+          }
+        </style>
+
     </head>
   <body>
     <div class="docs-container off-canvas off-canvas-sidebar-show">
       <div class="docs-navbar">
         <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar"><i class="icon icon-menu"></i></a>
-        <div class="docs-brand"><a class="docs-logo" href="./?lang=en">
+        <div class="docs-brand"><a class="docs-logo" href="./">
           <h2>Zijie Huang</h2></a>
       </div>
       </div>
       <div class="docs-sidebar off-canvas-sidebar" id="sidebar">
         <div class="docs-brand">
-          <a class="docs-logo" href="./index.html?lang=en">
+          <a class="docs-logo" href="./index.html">
             <h2>Zijie Huang</h2>
           </a>
            
           </a>
         </div>
           <div class="docs-nav">
-          <div class="accordion-container">
-            <div class="accordion">
-              <input id="accordion-basic-info" type="checkbox" name="docs-accordion-checkbox" hidden="" checked="checked">
-              <label class="accordion-header c-hand" for="accordion-basic-info"><a href="index.html?lang=en" style="color:#505c6e">Front Page</a></label>
-
-            </div>
-            <div class="accordion">
-              <input id="accordion-education" type="checkbox" name="docs-accordion-checkbox" hidden="" checked="checked">
-              <label class="accordion-header c-hand" for="accordion-education"><a href="appendix.html?lang=en" style="color:#505c6e">Appendix</a></label>
-              <div class="accordion-body">
-            
+            <div class="accordion-container">
+              <div class="accordion">
+                <input id="accordion-basic-info" type="checkbox" name="docs-accordion-checkbox" hidden="" checked="checked">
+                <label class="accordion-header c-hand" for="accordion-basic-info"><a href="index.html" style="color:#505c6e">Home</a></label>
               </div>
-            
-          
-            </div>
-            <div class="accordion">
-              <input id="accordion-links" type="checkbox" name="docs-accordion-checkbox" hidden="" checked="checked">
-              <label class="accordion-header c-hand" for="accordion-education"><a href="links.html?lang=en" style="color:#505c6e">Links</a></label>
-              <div class="accordion-body">
+              <div class="accordion">
+                <input id="accordion-work" type="checkbox" name="docs-accordion-checkbox" hidden="" checked="checked">
+                <label class="accordion-header c-hand" for="accordion-work">Research</label>
+                <div class="accordion-body">
+                  <ul class="menu menu-nav">
+                    <li class="menu-item"><a href="work.html">Work Introduction</a>
+                    </li>
+                    <li class="menu-item"><a href="appendix.html">Publications List</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="accordion">
+                <input id="accordion-links" type="checkbox" name="docs-accordion-checkbox" hidden="" checked="checked">
+                <label class="accordion-header c-hand" for="accordion-links"><a href="links.html" style="color:#505c6e">Links</a></label>
+                <div class="accordion-body">
 
+                </div>
               </div>
 
             </div>
-
           </div>
-        </div>
-      </div><a class="off-canvas-overlay" href="#close"></a>
+          </div><a class="off-canvas-overlay" href="#close"></a>
       <div class="off-canvas-content">
         <div class="docs-content" id="content">
           <div class="container" id="main">
-    
+
             <h3 class="s-title">
-              List of Publications
+              Publications List
               <a class="anchor"  href="#" aria-hidden="true">↑</a>
-            
             </h3>
 
+            <div id="filter-container">
+              <div id="filter-controls">
+                
+                <div class="filter-group">
+                  <h5>Author Role</h5>
+                  <div class="control-set">
+                    <label class="form-checkbox">
+                      <input type="checkbox" class="filter-control" data-filter-group="role" value="first-author">
+                      <i class="form-icon"></i> First Author
+                    </label>
+                    <label class="form-checkbox">
+                      <input type="checkbox" class="filter-control" data-filter-group="role" value="corresponding-author">
+                      <i class="form-icon"></i> Corresponding Author
+                    </label>
+                    <label class="form-checkbox">
+                      <input type="checkbox" class="filter-control" data-filter-group="role" value="other">
+                      <i class="form-icon"></i> Other
+                    </label>
+                  </div>
+                </div>
 
-            <p name="2" id="2" ></p>
+
+                <div class="filter-group">
+                  <h5>Publication Type</h5>
+                  <div class="control-set">
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="type" value="journal-en"><i class="form-icon"></i> English Journal</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="type" value="conference"><i class="form-icon"></i> Conference</label>
+                  </div>
+                </div>
+                
+
+                <div class="filter-group">
+                  <h5>Theme</h5>
+                  <div class="control-set">
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="theme" value="sqa"><i class="form-icon"></i> Software Quality Assurance (SQA)</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="theme" value="oss"><i class="form-icon"></i> Open Source Governance (OSS)</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="theme" value="ai4se"><i class="form-icon"></i> AI for Software Engineering (AI4SE)</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="theme" value="qse"><i class="form-icon"></i> Quantum Computing Software (QSE)</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="theme" value="et"><i class="form-icon"></i> Educational Technology (ET)</label>
+                  </div>
+                </div>
+                
+
+                <div class="filter-group">
+                  <h5>Indexed In</h5>
+                  <div class="control-set">
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="ccf-a"><i class="form-icon"></i> CCF-A</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="ccf-b"><i class="form-icon"></i> CCF-B</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="ccf-t1"><i class="form-icon"></i> CCF-T1</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="ccf-recommended"><i class="form-icon"></i>Other CCF Listed</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="sci"><i class="form-icon"></i> SCI</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="q1q2"><i class="form-icon"></i> CAS Q1/Q2</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="eij"><i class="form-icon"></i> EI Journal</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="eic"><i class="form-icon"></i> EI Conference</label>
+                    <label class="form-checkbox"><input type="checkbox" class="filter-control" data-filter-group="rating" value="pku-core"><i class="form-icon"></i> PKU Core</label>
+                  </div>
+                </div>
+
+                <div class="filter-group">
+                  <h5>Year</h5>
+                  <div class="form-group">
+                    <select class="form-select filter-control" id="filter-year" data-filter-group="year">
+                      <option value="all">All</option>
+                      </select>
+                  </div>
+                </div>
+
+              </div>
+              <div class="filter-actions">
+                <button class="btn btn-primary btn-sm" id="reset-filters">Reset</button>
+                <div id="filter-results-count">
+                  Showing <span id="pub-count">0</span> publications
+                </div>
+              </div>
+            </div>
+            
+            <p>Please note: The preprint versions provided via the "Preprint" link are usually free to access, but may differ in content and formatting from the officially published papers.</p>
+            <p>An asterisk (*) denotes the corresponding author.</p>
 
 
-<!--            <h4>In English</h4>-->
+            <h4 class="pub-type-heading" data-pub-type="journal-en">Journals Papers</h4>
 
-            <h5>Conference Papers</h5>
+          
+            <p class="pub-item" data-year="2025" data-theme="sqa" data-role="other" data-rating="ccf-b,sci,eij,q1q2" data-type="journal-en">[IJ23][IST 25] <strong>Usage patterns of software product metrics in assessing developers' output: A comprehensive study. </strong>.    <br>
+                 Wentao Chen, Huiqun Yu, Guisheng Fan, <strong>Zijie Huang</strong>, Yuguo Liang.    <br>
+                <em>Information and Software Technology</em>, 2025, 189: Article No. 107935.  <br>
+              <a href="https://huang.zj.cn/pdf/J33.pdf">Preprint</a> |
+              <a href="https://www.sciencedirect.com/science/article/pii/S0950584925002745">Official Version</a>
 
-    
-            <p>[C9][QRS'25] <strong>MindLint: A Static Analysis Tool for MindQuantum-Based Applications.</strong>    <br>
+            </p>
+
+            <p class="pub-item" data-year="2025" data-theme="ai4se,sqa" data-role="other" data-rating="sci,eij" data-type="journal-en">[IJ22][PeerJ CS 25] <strong>Predicting software developer sentiment on self-admitted technical debt</strong>.    <br>
+                 Haichuan Zhang, Xingguang Yang, Zhenyu Shu,  <strong>Zijie Huang</strong>, Gang Wang, Yuzhao Yang, Yan Zhao.   <br>
+                <em>PeerJ Computer Science</em>, 2025, 11: Article No. e3227. (SCI) <br>
+              <a href="https://peerj.com/articles/cs-3227/">Download</a>
+
+            </p>
+
+
+            <p class="pub-item" data-year="2025" data-theme="oss" data-role="other" data-rating="ccf-b,sci,eij,q1q2" data-type="journal-en">[IJ21][C&S 25] <strong>Tool or Toy: Are SCA Tools Ready for Challenging Scenarios?</strong>.    <br>
+                 Congyan Shu, Wentao Chen, <strong>Zijie Huang</strong>, Guisheng Fan, Huiqun Yu, Hengrun Zhang, Yuguo Liang.    <br>
+                <em>Computers & Security</em>, 2025, 158: Article No. 104624.  <br>
+              <a href="https://huang.zj.cn/pdf/J31.pdf">Preprint</a> |
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0164121224000116">Official Version</a>
+
+            </p>
+
+            
+
+
+            <p class="pub-item" data-year="2025" data-theme="ai4se,sqa" data-role="other" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ20][IJSEKE 25] <strong>Multiclass Classification for Self-Admitted Technical Debt Via Large Pre-Trained Language Model</strong>. <br> Yiyang Du, Xingguang Yang, Zhenyu Shu, <strong>Zijie Huang</strong>, Gang Wang, and Libo Xu.    <br>
+                 <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2025, 835-860.  <br>
+                
+              <a href="https://huang.zj.cn/pdf/J30.pdf">Preprint</a> | <a href="https://www.worldscientific.com/doi/10.1142/S0218194025500238">Official Version</a> 
+
+
+            </p>
+
+
+
+            <p class="pub-item" data-year="2025" data-theme="ai4se" data-role="other" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ19][EXSY 25] <strong>Automatic Code Summarization Using Abbreviation Expansion and Subword Segmentation</strong>. <br> Yuguo Liang, Guisheng Fan, Huiqun Yu*, Mingchen Li, <strong>Zijie Huang</strong>    <br>
+                 <em>Expert Systems</em>, 2025, 42(2): Article No. e13835.  <br>
+              
+
+              <a href="https://huang.zj.cn/pdf/J28.pdf">Preprint</a>  | <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/exsy.13835">Official Version</a>
+
+
+            </p>
+
+
+        <p class="pub-item" data-year="2024" data-theme="ai4se"  data-role="other" data-rating="ccf-a,sci,eij,q1q2" data-type="journal-en">[IJ18][TSE 24] <strong>Learning to Generate Structured Code Summaries from Hybrid Code Context</strong>. <br> Ziyi Zhou, Mingchen Li, Huiqun Yu*, Guisheng Fan*, Penghui Yang, <strong>Zijie Huang</strong>    <br>
+                <em>IEEE Transactions on Software Engineering</em>, 2024, 50(10): 2512-2528.  <br>
+              <a href="https://huang.zj.cn/pdf/J27.pdf">Preprint</a>  |
+
+              <a href="https://ieeexplore.ieee.org/document/10636040">Official Version</a>
+
+
+            </p>
+
+
+            <p class="pub-item" data-year="2024" data-theme="ai4se,sqa" data-role="corresponding-author" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ17][EXSY 24] <strong>A Code Change-Oriented Approach to Just-In-Time Defect Prediction with Multiple Input Semantic Fusion</strong>.    <br>
+                Teng Huang, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang*</strong>, Chenyu Wu    <br>
+                <em>Expert Systems</em>, 2024, 41(12): Article No. e13702.  <br>
+              
+              <a href="https://huang.zj.cn/pdf/J26.pdf">Preprint</a> | <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/exsy.13702">Official Version</a> 
+
+            </p>
+
+            <p class="pub-item" data-year="2024" data-theme="ai4se,sqa" data-role="first-author" data-rating="ccf-b,sci,eij,q1q2" data-type="journal-en">[IJ16][JSS 24] <strong>On The Effectiveness of Developer Features in Code Smell Prioritization: A Replication Study</strong>.    <br>
+                <strong>Zijie Huang</strong>, Huiqun Yu*, Guisheng Fan*, Zhiqing Shao, Ziyi Zhou, Mingchen Li.    <br>
+                <em>Journal of Systems and Software</em>, 2024, 210: Article No. 111968.  <br>
+              <a href="https://huang.zj.cn/pdf/J25.pdf">Preprint</a> |
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0164121224000116">Official Version</a>
+
+            </p>
+
+
+
+
+            <p class="pub-item" data-year="2024" data-theme="ai4se,sqa" data-role="corresponding-author" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ15][SQJ 24] <strong>Exploring Better Alternatives to Size Metrics for Explainable Software Defect Prediction</strong>.    <br>
+              Chenchen Chai, Guisheng Fan*, Huiqun Yu*, <strong>Zijie Huang*</strong>.    <br>
+              <em>Software Quality Journal</em>, 2024, 32: 459-486. <br>
+              
+              <a href="https://rdcu.be/duMr4">Download</a>  | <a href="https://link.springer.com/article/10.1007/s11219-023-09656-y">Official Version</a>
+            </p>
+
+            <p class="pub-item" data-year="2023" data-theme="et" data-role="first-author" data-rating="sci,eij" data-type="journal-en">[IJ14][PeerJ CS 23] <strong>Student Learning Performance Prediction Based on Online Behavior: An Empirical Study During The COVID-19 Pandemic</strong>.    <br>
+              Yiyi Liu, <strong>Zijie Huang</strong> (Co-first author), Gong Wang*.    <br>
+              <em>PeerJ Computer Science</em>, 2023, 9: Article No. e1507. (SCI)<br>
+              <a href="https://peerj.com/articles/cs-1699">Download</a>
+            </p>
+
+            <p class="pub-item" data-year="2024" data-theme="ai4se,sqa" data-role="first-author" data-rating="ccf-recommended,sci,eij,q1q2" data-type="journal-en">[IJ13][ESWA 24] <strong>Aligning XAI Explanations with Software Developers' Expectations: A Case Study with Code Smell Prioritization</strong>.    <br>
+              <strong>Zijie Huang</strong>, Huiqun Yu*, Guisheng Fan, Zhiqing Shao, Mingchen Li, Yuguo Liang.    <br>
+              <em>Expert Systems With Applications</em>, 2024, 238(A): Article No. 121640. <br>
+              <a href="https://huang.zj.cn/pdf/J22.pdf">Preprint</a> |
+              <a href="https://www.sciencedirect.com/science/article/pii/S0957417423021425">Official Version</a>
+            </p>
+
+
+
+            <p class="pub-item" data-year="2024" data-theme="ai4se" data-role="other" data-rating="ccf-recommended,sci,eij,q1q2" data-type="journal-en">[IJ12][NEUCOM 23] <strong>Enhancing Code Summarization with Action Word Prediction</strong>.    <br>
+              Mingchen Li, Huiqun Yu*, Guisheng Fan*, Ziyi Zhou, <strong>Zijie Huang</strong>.    <br>
+              <em>Neurocomputing</em>, 2024, 563: Article No. 126777. <br>
+              
+              <a href="https://huang.zj.cn/pdf/J21.pdf">Preprint</a> | <a href="https://www.sciencedirect.com/science/article/pii/S0925231223009001">Official Version</a>
+
+            </p>
+
+
+
+            <p class="pub-item" data-year="2023" data-theme="ai4se,sqa" data-role="first-author" data-rating="ccf-b,sci,eij" data-type="journal-en">[IJ11][JSEP 23] <strong>Bug Report Priority Prediction Using Social and Technical Features</strong>.    <br>
+              <strong>Zijie Huang</strong>, Zhiqing Shao*, Guisheng Fan*, Huiqun Yu, Kang Yang, Ziyi Zhou.    <br>
+              <em>Journal of Software: Evolution and Process</em>, 2023, 36(6): Article No. e2616.
+              <br>
+              <a href="https://onlinelibrary.wiley.com/share/author/4WV6GKMIIGFTFC7YFNUM?target=10.1002/smr.2616">Download</a> |
+              <a href="https://onlinelibrary.wiley.com/doi/10.1002/smr.2616">Official Version</a>
+
+
+            </p>
+
+
+            <p class="pub-item" data-year="2023" data-theme="ai4se" data-role="other" data-rating="ccf-a,sci,eij,q1q2" data-type="journal-en">[IJ10][TSE 23] <strong>Towards Retrieval-Based Neural Code Summarization: A Meta-Learning Approach</strong>.    <br>
+              Ziyi Zhou, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang</strong>, Kang Yang.    <br>
+              <em>IEEE Transactions on Software Engineering</em>, 2023, 49(4): 3008-3031.
+              <br>
+              <a href="https://huang.zj.cn/pdf/J19.pdf">Preprint</a> |
+              <a href="https://ieeexplore.ieee.org/document/10021882">Official Version</a>
+
+
+            </p>
+
+
+
+            <p class="pub-item" data-year="2022" data-theme="ai4se,oss,sqa" data-role="other" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ9][IJSEKE 22A] <strong>Class Change Prediction by Incorporating Community Smell: An Empirical Study</strong>.    <br>
+              Qingyuan Dou, Junhua Chen, Jianhua Gao*, <strong>Zijie Huang</strong>.    <br>
+              <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2022, 32(09): 1369-1388.
+              <br>
+              <a href="https://huang.zj.cn/pdf/J16.pdf">Preprint</a> |
+
+              <a href="https://worldscientific.com/doi/10.1142/S0218194022500528">Official Version</a>
+
+            </p>
+
+
+            <p class="pub-item" data-year="2022" data-theme="ai4se" data-role="other" data-rating="ccf-b,sci,eij,q1q2" data-type="journal-en">[IJ8][ASEJ 22] <strong>HQLgen: Deep Learning Based HQL Query Generation from Program Context</strong>.    <br>
+              Ziyi Zhou, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang</strong>, Kang Yang, Jiayin Zhang.    <br>
+              <em>Automated Software Engineering</em>, 2022, 29: Article No. 55.
+              <br>
+              <a href="https://huang.zj.cn/pdf/J15.pdf">Preprint</a> |
+
+              <a href="https://link.springer.com/article/10.1007/s10515-022-00359-5">Official Version</a>
+
+            </p>
+
+
+
+            <p class="pub-item" data-year="2022" data-theme="ai4se,sqa" data-role="corresponding-author" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ7][IJSEKE 22] <strong>Automatic Identification of High Impact Bug Report by Product and Test Code Quality</strong>.    <br>
+              Jianshu Ding, Guisheng Fan*, Huiqun Yu, <strong>Zijie Huang*</strong>.    <br>
+              <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2022, 32(06): 893-916.
+              <br>
+              
+              <a href="https://huang.zj.cn/pdf/J13.pdf">Preprint</a> |
+
+              <a href="https://doi.org/10.1142/S021819402250036X">Official Version</a>
+
+            </p>
+
+
+            <p class="pub-item" data-year="2022" data-theme="ai4se" data-role="other" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ6][IJSEKE 22B] <strong>Code Generation with Hybrid of Structural and Semantic Features Retrieval</strong>.    <br>
+              Kang Yang, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang</strong>, Ziyi Zhou.    <br>
+              <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2022, 32(03): 457-478.
+              <br>
+              
+              <a href="https://huang.zj.cn/pdf/J12.pdf">Preprint</a> |
+
+              <a href="https://doi.org/10.1142/S0218194022500267">Official Version</a>
+            </p>
+
+
+            <p class="pub-item" data-year="2022" data-theme="sqa" data-role="first-author" data-rating="ccf-b,sci,eij" data-type="journal-en">[IJ5][SCP 22] <strong>HBSniff: A Static Analysis Tool for Java Hibernate Object-Relational Mapping Code Smell Detection</strong>.    <br>
+              <strong>Zijie Huang</strong>, Zhiqing Shao*, Guisheng Fan*, Huiqun Yu, Kang Yang, Ziyi Zhou.    <br>
+              <em>Science of Computer Programming</em>, 2022, 217: Article No. 102778.
+              <br>
+
+              <a href="https://hbsniff.github.io/">Tool Documentation and Preprint |
+                <a href="https://www.sciencedirect.com/science/article/pii/S0167642322000119">Official Version</a></a>
+            </p>
+
+
+
+            <p class="pub-item" data-year="2022" data-theme="ai4se" data-role="other" data-rating="ccf-b,sci,eij" data-type="journal-en">[IJ4][JSEP 21] <strong>A Graph Sequence Neural Architecture for Next Code Completion with Semantic Structure Features</strong>.    <br>
+              Kang Yang, Huiqun Yu*, Guisheng Fan*, Xingguang Yang, <strong>Zijie Huang</strong>.    <br>
+              <em>Journal of Software: Evolution and Process</em>, 2022, 34(1): Article No. e2414.
+              <br>
+              <a href="https://huang.zj.cn/pdf/J9.pdf">Preprint</a> |
+
+              <a href="http://doi.org/10.1002/smr.2414">Official Version</a>
+            </p>
+
+
+            <p class="pub-item" data-year="2022" data-theme="ai4se" data-role="other" data-rating="ccf-b,sci,eij,q1q2" data-type="journal-en">[IJ3][IST 21] <strong>Summarizing Source Code with Hierarchical Code Representation</strong>.    <br>
+              Ziyi Zhou, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang</strong>, Xingguang Yang.    <br>
+              <em>Information and Software Technology</em>, 2022, 143: Article No. 106761.
+              <br>
+              <a href="https://huang.zj.cn/pdf/J8.pdf">Preprint</a> |
+
+              <a href="https://doi.org/10.1016/j.infsof.2021.106761">Official Version</a>
+            </p>
+
+
+
+            <p class="pub-item" data-year="2022" data-theme="ai4se,oss" data-role="first-author" data-rating="ccf-t1,ccf-b,sci,eij,q1q2" data-type="journal-en">[IJ2][JCST 21] <strong>Community Smell Occurrence Prediction on Multi-Granularity by Developer-Oriented Features and Process Metrics</strong>.    <br>
+              <strong>Zijie Huang</strong>, Zhiqing Shao*, Guisheng Fan*, Huiqun Yu, Xingguang Yang, Kang Yang.    <br>
+              <em>Journal of Computer Science and Technology</em>, 2022, 37(1): 182-206.
+              <br>
+              <a href="https://jcst.ict.ac.cn/fileup/1000-9000/PDF/2022-1-10-1596.pdf">Download</a>  |  <a href="https://jcst.ict.ac.cn/article/doi/10.1007/s11390-021-1596-1">Official Version</a>
+            </p>
+
+
+              <p class="pub-item" data-year="2021" data-theme="sqa" data-role="other" data-rating="ccf-recommended,sci,eij" data-type="journal-en">[IJ1][IJSEKE 21] <strong>Python Code Smell Refactoring Route Generation Based on Association Rule And Correlation</strong>.    <br>
+              Guanglei Wang, Junhua Chen, Jianhua Gao*, <strong>Zijie Huang</strong>.    <br>
+              <em>International Journal of Software Engineering and Knowledge Engineering</em>. 2021, 31(9): 1329-1347.    <br>
+              
+              <a href="https://huang.zj.cn/pdf/J3.pdf">Preprint</a> |
+
+              <a href="https://worldscientific.com/doi/10.1142/S0218194021500431">Official Version</a></p>
+
+
+            <h4 class="pub-type-heading" data-pub-type="conference">Conference Papers</h4>
+
+
+
+            <p class="pub-item" data-year="2025" data-role="other"  data-theme="qse"  data-rating="ccf-recommended,eic" data-type="conference">[C9][QRS'25] <strong>MindLint: A Static Analysis Tool for MindQuantum-Based Applications.</strong>    <br>
             Xuan Mao, <strong>Zijie Huang</strong>, Jianxin Ge, Chao Wang, Lizhi Cai*.  <br>
               <em>25th International Conference on Software Quality, Reliability, and Security (QRS) - Industry Tracks</em>. 2025, 765-766.  <br>
               <a href="https://huang.zj.cn/pdf/C9.pdf">Preprint</a> 
 
             </p>
 
-              
-            <p>[C8][ICSE'25 NIER] <strong>Towards Early Warning and Migration of High-Risk Dormant Open-Source Software Dependencies.</strong>    <br>
+            <p class="pub-item" data-year="2025" data-role="first-author"  data-theme="ai4se,oss,sqa" data-rating="ccf-a,eic" data-type="conference">[C8][ICSE'25 NIER] <strong>Towards Early Warning and Migration of High-Risk Dormant Open-Source Software Dependencies.</strong>    <br>
             <strong>Zijie Huang</strong>, Lizhi Cai*, Xuan Mao, Kang Yang  <br>
-              <em>47th International Conference on Software Engineering: New Ideas and Emerging Results</em>. 2025, 121-125.  <br>
-              <a href="https://huang.zj.cn/pdf/C8.pdf">Preprint</a>   |
-              <a href="https://ieeexplore.ieee.org/document/11023967">Publisher Page</a> 
+              <em>47th International Conference on Software Engineering: New Ideas and Emerging Results</em>. 2025,  121-125.  <br>
+              <a href="https://huang.zj.cn/pdf/C8.pdf">Preprint</a>  |
+              <a href="https://ieeexplore.ieee.org/document/11023967">Official Version</a> </p>
+
 
             </p>
 
-              
-            <p>[C7][Q-SE'25] <strong>Towards Defect Prediction for Quantum Software.</strong>    <br>
-              Xuan Mao, <strong>Zijie Huang</strong>, Jianxin Ge, Chao Wang, Wuxu Wang, Lizhi Cai*  <br>
-              <em>6th International Workshop on Quantum Software Engineering</em>. 2025, 1-8.  <br>
-              <a href="https://huang.zj.cn/pdf/C7.pdf">Preprint</a>  |
-              <a href="https://ieeexplore.ieee.org/document/11029543">Publisher Page</a>
+            <p class="pub-item" data-year="2025" data-role="other"  data-theme="ai4se,qse,sqa"  data-rating="other,eic" data-type="conference">[C7][Q-SE'25] <strong>Towards Defect Prediction for Quantum Software.</strong>    <br>
+              Xuan Mao, <strong>Zijie Huang</strong>, Jianxin Ge, Chao Wang, Wuxu Wang, Lizhi Cai* <br>
+              <em>6th International Workshop on Quantum Software Engineering</em>. 2025, 1-8.  (Submitted 25, Accepted 7)  <br>
+              <a href="https://huang.zj.cn/pdf/C7.pdf">Preprint</a> | 
+              <a href="https://ieeexplore.ieee.org/document/11029543">Official Version</a>
 
             </p>
-              
-            <p>[C6][Internetware'22] <strong>Bug Report Priority Prediction Using Developer-Oriented Socio-Technical Features</strong>    <br>
+
+
+            <p class="pub-item" data-year="2022" data-role="first-author"  data-theme="ai4se,sqa,oss" data-rating="ccf-recommended,eic" data-type="conference">[C6][Internetware'22] <strong>Bug Report Priority Prediction Using Developer-Oriented Socio-Technical Features.</strong>    <br>
               <strong>Zijie Huang</strong>, Zhiqing Shao*, Guisheng Fan*, Huiqun Yu, Kang Yang, Ziyi Zhou.    <br>
               <em>13th Asia-Pacific Symposium on Internetware</em>. 2022, 202-211. <br>
               <a href="https://huang.zj.cn/pdf/internetware22.pdf">Preprint</a> |
-              <a href="https://dl.acm.org/doi/10.1145/3545258.3545288">Publisher Page</a>
+              <a href="https://dl.acm.org/doi/10.1145/3545258.3545288">Official Version</a>
 
             </p>
 
-            <p>[C5][ICCQ'22] <strong>To What Extent eCan Code Quality be Improved by Eliminating Test Smells?</strong>    <br>
-              Haitao Wu, Ruidi Yin, Jianhua Gao, <strong>Zijie Huang</strong>, Huajun Huang.    <br>
-              Contribution as Co-Author: Conception, Methodology, Proofreading<br>
-              <em>2nd International Conference on Code Quality</em>. 2022, 19-26. <br>
+
+
+            <p class="pub-item" data-year="2022" data-role="other"  data-theme="sqa" data-rating="other,eic" data-type="conference">[C5][ICCQ'22] <strong>To What Extent Can Code Quality be Improved by Eliminating Test Smells?</strong>    <br>
+              Haitao Wu, Ruidi Yin, Jianhua Gao*, <strong>Zijie Huang</strong>, Huajun Huang.    <br>
+              <em>2nd International Conference on Code Quality</em>. 2022, 19-26. (<a href="https://www.iccq.ru/2022.html#papers">Submitted 11, Accepted 4</a>)   <br>
               <a href="https://huang.zj.cn/pdf/C5.pdf">Preprint</a> |
-              <a href="http://doi.org/10.1109/ICCQ53703.2022.9763153">Publisher Page</a>
+              <a href="http://doi.org/10.1109/ICCQ53703.2022.9763153">Official Version</a>
             </p>
 
-            <p>[C4][QRS'21] <strong>Automatic Identification of High Impact Bug Report by Test Smells of Textual Similar Bug Reports</strong>.    <br>
+            <p class="pub-item" data-year="2022" data-role="corresponding-author" data-theme="ai4se,sqa" data-rating="ccf-recommended,eic" data-type="conference">[C4][QRS'21] <strong>Automatic Identification of High Impact Bug Report by Test Smells of Textual Similar Bug Reports</strong>.    <br>
               Jianshu Ding, Guisheng Fan*, Huiqun Yu*, <strong>Zijie Huang*</strong>.    <br>
-              Contribution as Corresponding Author: Conception, Methodology, Experiment, Writing<br>
               <em>21st IEEE International Conference on Software Quality, Reliability and Security</em>. 2022, 446-457.    <br>
-              <a href="https://github.com/SORD-src/QRS21_Appendix/raw/main/QRS21.pdf">Preprint</a> | <a href="https://ieeexplore.ieee.org/document/9724899">Publisher Page</a>
-            </p>
 
-            <p>[C3][CollaborateCom'21] <strong>An Empirical Study of Model-Agnostic Interpretation Technique for Just-in-Time Software Defect Prediction</strong>.    <br>
-              Xingguang Yang, Huiqun Yu, Guisheng Fan, <strong>Zijie Huang</strong>, Kang Yang, Ziyi Zhou.    <br>
-              Contribution as Co-Author: Conception, Proofreading<br>
+              <a href="https://github.com/SORD-src/QRS21_Appendix/raw/main/QRS21.pdf">Preprint</a> | <a href="https://ieeexplore.ieee.org/document/9724899">Official Version</a>
+
+            <p class="pub-item" data-year="2022" data-role="other"  data-theme="ai4se,sqa"  data-rating="ccf-recommended,eic" data-type="conference">[C3][CollaborateCom'21] <strong>An Empirical Study of Model-Agnostic Interpretation Technique for Just-in-Time Software Defect Prediction</strong>.    <br>
+              Xingguang Yang, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang</strong>, Kang Yang, Ziyi Zhou.    <br>
               <em>17th EAI International Conference on Collaborative Computing: Networking, Applications and Worksharing</em>. 2022, 420-438.    <br>
-              <a href="https://www.researchgate.net/publication/354066855_An_Empirical_Study_of_Model-Agnostic_Interpretation_Technique_for_Just-in-Time_Software_Defect_Prediction?_sg=crwbwA0-qheAUQ_FbJSZ-f091U2kHAmb66F148O1DRxb5okGU6QltRR4qqyjMswpUBUKh0Gfhi6zaxmq8h-BEuhAHmom8YVn9yFHab1C.qMg3S2IpWTzcPQzA46uD56Dytqp8undmIb0VHWzi7JePlCauLxyUqWR3BmBx8y2N23BYPEfV9JBCInyBhqurJQ">Preprint</a> |               <a href="http://doi.org/10.1109/ICCQ53703.2022.9763153">Publisher Page</a>
-            </p>
 
-            <p>[C2][ICPC'21] <strong>Predicting Community Smells’ Occurrence on Individual Developers by Sentiments</strong>.    <br>
-              <strong>Zijie Huang</strong>, Zhiqing Shao, Guisheng Fan, Jianhua Gao, Ziyi Zhou, Kang Yang, Xingguang Yang.    <br>
-              <em>29th IEEE/ACM International Conference on Program Comprehension</em>. 2021: 230-241.    <br>
-              <a href="https://arxiv.org/abs/2103.07090">Preprint</a> |
-              <a href="https://ieeexplore.ieee.org/document/9462967/">Publisher Page</a></p>
+            <a href="https://www.researchgate.net/publication/354066855_An_Empirical_Study_of_Model-Agnostic_Interpretation_Technique_for_Just-in-Time_Software_Defect_Prediction?_sg=crwbwA0-qheAUQ_FbJSZ-f091U2kHAmb66F148O1DRxb5okGU6QltRR4qqyjMswpUBUKh0Gfhi6zaxmq8h-BEuhAHmom8YVn9yFHab1C.qMg3S2IpWTzcPQzA46uD56Dytqp8undmIb0VHWzi7JePlCauLxyUqWR3BmBx8y2N23BYPEfV9JBCInyBhqurJQ">Preprint</a>|
+            <a href="https://link.springer.com/chapter/10.1007/978-3-030-92635-9_25">Official Version</a> </p>
 
-            <p>[C1][SEKE'19] <strong>The Smell of Blood: Evaluating Anemia and Bloodshot Symptoms in Web Applications</strong>.    <br>
-              <strong>Zijie Huang</strong>, Junhua Chen, Jianhua Gao.    <br>
-              <em>33rd International Conference on Software Engineering and Knowledge Engineering</em>. 2019: 141-146.    <br>
+
+            <p class="pub-item" data-year="2021" data-role="first-author"  data-theme="ai4se,sqa,oss" data-rating="ccf-b,eic" data-type="conference">[C2][ICPC'21] <strong>Predicting Community Smells’ Occurrence on Individual Developers by Sentiments</strong>.    <br>
+              <strong>Zijie Huang</strong>, Zhiqing Shao*, Guisheng Fan*, Jianhua Gao, Ziyi Zhou, Kang Yang, Xingguang Yang.    <br>
+              <em>29th IEEE/ACM International Conference on Program Comprehension</em>. 2021, 230-241.    <br>
+              <a href="https://arxiv.org/abs/2103.07090">Preprint</a>  |
+              <a href="https://ieeexplore.ieee.org/document/9462967/">Official Version</a> </p>
+
+            <p class="pub-item" data-year="2019" data-role="first-author"  data-theme="sqa" data-rating="ccf-recommended,eic" data-type="conference">[C1][SEKE'19] <strong>The Smell of Blood: Evaluating Anemia and Bloodshot Symptoms in Web Applications</strong>.    <br>
+              <strong>Zijie Huang</strong>, Junhua Chen, Jianhua Gao*.    <br>
+              <em>33rd International Conference on Software Engineering and Knowledge Engineering</em>. 2019, 141-146.    <br>
               <a href="http://ksiresearch.org/seke/seke19paper/seke19paper_61.pdf">Download</a></p>
 
-            <h5>Journal Papers</h5>
-
-                          
-            <p>[J23][IST 25] <strong>Usage patterns of software product metrics in assessing developers' output: A comprehensive study. </strong>.    <br>
-                 Wentao Chen, Huiqun Yu, Guisheng Fan, <strong>Zijie Huang</strong>, Yuguo Liang.    <br>
-                <em>Information and Software Technology</em>, 2025, 189: Article No. 107935.  <br>
-              <a href="https://huang.zj.cn/pdf/J33.pdf">Preprint</a> |
-              <a href="https://www.sciencedirect.com/science/article/pii/S0950584925002745">Publisher Page</a>
-
-            </p>
-
-            <p>[J22][PeerJ CS 25] <strong>Predicting software developer sentiment on self-admitted technical debt</strong>.    <br>
-                 Haichuan Zhang, Xingguang Yang, Zhenyu Shu,  <strong>Zijie Huang</strong>, Gang Wang, Yuzhao Yang, Yan Zhao.   <br>
-                <em>PeerJ Computer Science</em>, 2025, 11: Article No. e3227. (SCI) <br>
-              <a href="https://peerj.com/articles/cs-3227/">Open Access</a>
-
-            </p>
-
-
-            <p>[J21][C&S 25] <strong>Tool or Toy: Are SCA Tools Ready for Challenging Scenarios?</strong>.    <br>
-                 Congyan Shu, Wentao Chen, <strong>Zijie Huang</strong>, Guisheng Fan, Huiqun Yu, Hengrun Zhang, Yuguo Liang.    <br>
-                <em>Computers & Security</em>, 2025, 158: Article No. 104624.  <br>
-              <a href="https://huang.zj.cn/pdf/J31.pdf">Preprint</a> |
-              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0164121224000116">Publisher Page</a>
-
-            </p>
-              
-              
-            <p>[J20][IJSEKE 25] <strong>Multiclass Classification for Self-Admitted Technical Debt Via Large Pre-Trained Language Model</strong>. <br> Yiyang Du, Xingguang Yang, Zhenyu Shu, <strong>Zijie Huang</strong>, Gang Wang, and Libo Xu.    <br>
-                 <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2025, 835-860.  <br>
-              <a href="https://huang.zj.cn/pdf/J30.pdf">Preprint | <a href="https://www.worldscientific.com/doi/10.1142/S0218194025500238">Publisher Page</a> 
-
-            </p>
-              
-            <p>[J19][EXSY 25] <strong>Automatic Code Summarization Using Abbreviation Expansion and Subword Segmentation</strong>. <br> Yuguo Liang, Guisheng Fan, Huiqun Yu*, Mingchen Li, <strong>Zijie Huang</strong>    <br>
-                 <em>Expert Systems</em>, 2025, 42(2): Article No. e13835.  <br>
-              <a href="https://huang.zj.cn/pdf/J28.pdf">Preprint</a>  | <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/exsy.13835">Publisher Page</a>
-
-            </p>
-
-              
-            <p>[J18][TSE 24] <strong>Learning to Generate Structured Code Summaries from Hybrid Code Context</strong>. <br> Ziyi Zhou, Mingchen Li, Huiqun Yu*, Guisheng Fan*, Penghui Yang, <strong>Zijie Huang</strong>    <br>
-                <em>IEEE Transactions on Software Engineering</em>, 2024, 50(10), 2512-2528. <br>
-              <a href="https://huang.zj.cn/pdf/J27.pdf">Download</a> |
-
-              <a href="https://ieeexplore.ieee.org/document/10636040">Publisher Page</a>
-
-            </p>
-
-            <p>[J17][EXSY 24] <strong>A Code Change-Oriented Approach to Just-In-Time Defect Prediction with Multiple Input Semantic Fusion</strong>.    <br>
-                Teng Huang, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang*</strong>, Chenyu Wu    <br>
-                <em>Expert Systems</em>, 2024, 41(12): Article No. e13702.  <br>
-              <a href="https://huang.zj.cn/pdf/J26.pdf">Download</a> | <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/exsy.13702">Publisher Page</a> 
-
-            </p>
-              
-            <p>[J16][JSS 24] <strong>On The Effectiveness of Developer Features in Code Smell Prioritization: A Replication Study</strong>.    <br>
-                <strong>Zijie Huang</strong>, Huiqun Yu*, Guisheng Fan*, Zhiqing Shao, Ziyi Zhou, Mingchen Li.    <br>
-                <em>Journal of Systems and Software</em>, 2024, 210: Article No. 111968. <br>
-                <a href="https://huang.zj.cn/pdf/J25.pdf">Download</a>  | <a href="https://www.sciencedirect.com/science/article/pii/S0164121224000116">Publisher Page</a>
-            </p>
-              
-            <p>[J15][SQJ 24] <strong>Exploring Better Alternatives to Size Metrics for Explainable Software Defect Prediction</strong>.    <br>
-              Chenchen Chai, Guisheng Fan*, Huiqun Yu*, <strong>Zijie Huang*</strong>.    <br>
-              <em>Software Quality Journal</em>, 2023, 32: 459–486. <br>
-              <a href="https://rdcu.be/duMr4">Download</a>  | <a href="https://link.springer.com/article/10.1007/s11219-023-09656-y">Publisher Page</a>
-            </p>
-              
-            <p>[J14][PeerJ CS 23] <strong>Student Learning Performance Prediction Based on Online Behavior: An Empirical Study During The COVID-19 Pandemic</strong>.    <br>
-              Yiyi Liu, <strong>Zijie Huang</strong>, Gong Wang*.    <br>
-              <em>PeerJ Computer Science</em>, 2023, 9: Article No. e1507. <br>
-               
-               <a href="https://peerj.com/articles/cs-1699.pdf">Download</a>
-            </p>
-
-            <p>[J13][ESWA 24] <strong>Aligning XAI Explanations with Software Developers' Expectations: A Case Study with Code Smell Prioritization</strong>.    <br>
-              <strong>Zijie Huang</strong>, Huiqun Yu*, Guisheng Fan, Zhiqing Shao, Mingchen Li, Yuguo Liang.    <br>
-              <em>Expert Systems With Applications</em>, 2024, 238(A), Article No. 121640.  <br>
-              <a href="https://huang.zj.cn/pdf/J22.pdf">Download</a> |
-              <a href="https://www.sciencedirect.com/science/article/pii/S0957417423021425">Publisher Page</a>
-            </p>
-
-
-            <p>[J12][NEUCOM 23] <strong>Enhancing Code Summarization with Action Word Prediction</strong>.    <br>
-              Mingchen Li, Huiqun Yu*, Guisheng Fan*, Ziyi Zhou, <strong>Zijie Huang</strong>.    <br>
-              <em>Neurocomputing</em>, 2024, 563: Article No. 126777. <br>
-              <a href="https://huang.zj.cn/pdf/J21.pdf">Preprint</a> | <a href="https://www.sciencedirect.com/science/article/pii/S0925231223009001">Publisher Page</a>
-
-            </p>
-
-
-            <p>[J11][JSEP 23] <strong>Bug Report Priority Prediction Using Social and Technical Features</strong>.    <br>
-              <strong>Zijie Huang</strong>, Zhiqing Shao*, Guisheng Fan*, Huiqun Yu, Kang Yang, Ziyi Zhou.    <br>
-              <em>Journal of Software: Evolution and Process</em>, 2023, 36(6): Article No. e2616. <br>
-              <a href="https://onlinelibrary.wiley.com/share/author/4WV6GKMIIGFTFC7YFNUM?target=10.1002/smr.2616">Download</a>
-
-            </p>
-
-            <p>[J10][TSE 23] <strong>Towards Retrieval-Based Neural Code Summarization: A Meta-Learning Approach</strong>.    <br>
-              Ziyi Zhou, Huiqun Yu*, Guisheng Fan*, <strong>Zijie Huang</strong>, Kang Yang.    <br>
-              <em>IEEE Transactions on Software Engineering</em>, 2023, 49(4): 3008-3031. <br>
-              Contribution as Co-Author: Manual Assessment, Editing, Proofreading <br>
-              <a href="https://huang.zj.cn/pdf/J19.pdf">Download</a> |
-              <a href="https://ieeexplore.ieee.org/document/10021882">Publisher Page</a>
-            </p>
-
-            <p>[J9][IJSEKE 22] <strong>Class Change Prediction by Incorporating Community Smell: An Empirical Study</strong>.    <br>
-              Qingyuan Dou, Junhua Chen, Jianhua Gao, <strong>Zijie Huang</strong>.    <br>
-              <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2022, 32(09): 1369-1388.
-              <br>
-              <a href="https://huang.zj.cn/pdf/J16.pdf">Preprint</a> |
-              <a href="https://worldscientific.com/doi/10.1142/S0218194022500528">Publisher Page</a>
-
-            </p>
-
-            <p>[J8][ASEJ 22] <strong>HQLgen: Deep Learning Based HQL Query Generation from Program Context</strong>.    <br>
-              Ziyi Zhou, Huiqun Yu, Guisheng Fan, <strong>Zijie Huang</strong>, Kang Yang, Jiayin Zhang.    <br>
-              <em>Automated Software Engineering</em>, 2022, 29: Article No. 55.
-              <br>
-              <a href="https://huang.zj.cn/pdf/J15.pdf">Preprint</a> |
-
-              <a href="https://link.springer.com/article/10.1007/s10515-022-00359-5">Publisher Page</a>
-
-            </p>
-
-            <p>[J7][IJSEKE 22] <strong>Automatic Identification of High Impact Bug Report by Product and Test Code Quality</strong>.    <br>
-              Jianshu Ding, Guisheng Fan*, Huiqun Yu, <strong>Zijie Huang*</strong>.    <br>
-              <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2022, 32(06): 893-916.
-              <br>
-              <a href="https://huang.zj.cn/pdf/J13.pdf">Preprint</a> |
-
-              <a href="https://doi.org/10.1142/S021819402250036X">Publisher Page</a>
-            </p>
-
-            <p>[J6][IJSEKE 22] <strong>Code Generation with Hybrid of Structural and Semantic Features Retrieval</strong>.    <br>
-              Kang Yang, Huiqun Yu, Guisheng Fan, <strong>Zijie Huang</strong>, Ziyi Zhou.    <br>
-              <em>International Journal of Software Engineering and Knowledge Engineering</em>, 2022, 32(03): 457-478.
-              <br>
-              Contribution as Co-Author: Editing, Proofreading<br>
-              <a href="https://huang.zj.cn/pdf/J12.pdf">Preprint</a> |
-
-              <a href="https://doi.org/10.1142/S0218194022500267">Publisher Page</a>
-            </p>
-
-            <p>[J5][SCP 22] <strong>HBSniff: A Static Analysis Tool for Java Hibernate Object-Relational Mapping Code Smell Detection</strong>.    <br>
-              <strong>Zijie Huang</strong>, Zhiqing Shao*, Guisheng Fan*, Huiqun Yu, Kang Yang, Ziyi Zhou.    <br>
-              <em>Science of Computer Programming</em>, 2022, 217: Article No. 102778.
-              <br>
-              <a href="https://hbsniff.github.io/">Tool Documentation & Preprint</a> |
-              <a href="https://www.sciencedirect.com/science/article/pii/S0167642322000119">Publisher Page</a>
-
-            </p>
-
-
-            <p>[J4][JSEP 21] <strong>A Graph Sequence Neural Architecture for Next Code Completion with Semantic Structure Features</strong>.    <br>
-              Kang Yang, Huiqun Yu, Guisheng Fan, Xingguang Yang, <strong>Zijie Huang</strong>.    <br>
-              <em>Journal of Software: Evolution and Process</em>, 2022, 34(1): Article No. e2414.
-              <br>
-              Contribution as Co-Author: Editing, Proofreading<br>
-              <a href="https://huang.zj.cn/pdf/J9.pdf">Preprint</a> |
-
-              <a href="http://doi.org/10.1002/smr.2414">Publisher Page</a>
-            </p>
-
-            <p>[J3][IST 21] <strong>Summarizing Source Code with Hierarchical Code Representation</strong>.    <br>
-              Ziyi Zhou, Huiqun Yu, Guisheng Fan, <strong>Zijie Huang</strong>, Xingguang Yang.    <br>
-              <em>Information and Software Technology</em>, 2022, 143: Article No. 106761.
-              <br>
-              Contribution as Co-Author: Conception, Proofreading<br>
-              <a href="https://huang.zj.cn/pdf/J8.pdf">Preprint</a> |
-
-              <a href="https://doi.org/10.1016/j.infsof.2021.106761">Publisher Page</a>
-            </p>
-
-            <p>[J2][JCST 22] <strong>Community Smell Occurrence Prediction on Multi-Granularity by Developer-Oriented Features and Process Metrics</strong>.    <br>
-              <strong>Zijie Huang</strong>, Zhiqing Shao, Guisheng Fan, Huiqun Yu, Xingguang Yang, Kang Yang.    <br>
-              <em>Journal of Computer Science and Technology</em>, 2022, 37(1): 182-206.
-              <br>
-              <a href="https://huang.zj.cn/pdf/JCST.pdf">Preprint</a> | <a href="https://doi.org/10.1007/s11390-021-1596-1">Publisher Page</a>
-            </p>
-
-            <p>[J1][IJSEKE 21] <strong>Python Code Smell Refactoring Route Generation Based on Association Rule And Correlation</strong>.    <br>
-              Guanglei Wang, Junhua Chen, Jianhua Gao, <strong>Zijie Huang</strong>.    <br>
-              <em>International Journal of Software Engineering and Knowledge Engineering</em>. 2021, 31(9): 1329-1347.    <br>
-              Contribution as Co-Author: Methodology, Writing<br>
-              <a href="https://huang.zj.cn/pdf/J3.pdf">Preprint</a> |
-
-              <a href="https://worldscientific.com/doi/10.1142/S0218194021500431">Publisher Page</a></p>
-
-
-            <h4>中文（In Chinese）</h4>
-            The list is available in <a href="https://huang.zj.cn/appendix.html">the Chinese site</a>.
 
           </div>
         </div>
-
       </div>
+
     </div>
-</body></html>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // --- 1. Select Elements ---
+        const pubItems = document.querySelectorAll('.pub-item');
+        const pubHeadings = document.querySelectorAll('.pub-type-heading');
+        const yearSelect = document.getElementById('filter-year');
+        const countSpan = document.getElementById('pub-count');
+        const filterControls = document.querySelectorAll('.filter-control');
+        const resetBtn = document.getElementById('reset-filters');
+        
+        // --- 2. Populate Year Filter ---
+        const years = new Set();
+        pubItems.forEach(item => {
+          if (item.dataset.year) {
+            years.add(item.dataset.year);
+          }
+        });
+        
+        // Sort years descending and add to select
+        [...years].sort((a, b) => b - a).forEach(year => {
+          const option = document.createElement('option');
+          option.value = year;
+          option.textContent = year;
+          yearSelect.appendChild(option);
+        });
+
+        // --- 3. Main Filter Function ---
+        const applyFilters = () => {
+          // Get all selected filter values
+          const selectedFilters = {
+            role: getSelectedValues('role'),
+            rating: getSelectedValues('rating'),
+            type: getSelectedValues('type'),
+            theme: getSelectedValues('theme'),
+            year: yearSelect.value
+          };
+          
+          let visibleCount = 0;
+          const visibleHeadings = new Set();
+
+          // Loop through each publication item
+          pubItems.forEach(item => {
+            const itemData = item.dataset;
+            
+            // Check each filter group
+            const matchesRole = checkGroupMatch(selectedFilters.role, itemData.role);
+            const matchesRating = checkGroupMatch(selectedFilters.rating, itemData.rating);
+            // Since we removed 'journal-cn' and 'monograph' from display, their types will naturally be filtered out
+            const matchesType = checkGroupMatch(selectedFilters.type, itemData.type); 
+            const matchesYear = (selectedFilters.year === 'all' || itemData.year === selectedFilters.year);
+            const matchesTheme = checkGroupMatch(selectedFilters.theme, itemData.theme);
+      
+            // All conditions must be true
+            if (matchesRole && matchesRating && matchesType && matchesYear && matchesTheme) {
+              item.style.display = 'block';
+              visibleCount++;
+              visibleHeadings.add(itemData.type); // Mark this item's heading as visible
+            } else {
+              item.style.display = 'none';
+            }
+          });
+          
+          // --- 4. Show/Hide Headings ---
+          pubHeadings.forEach(heading => {
+            if (visibleHeadings.has(heading.dataset.pubType)) {
+              heading.style.display = 'block';
+            } else {
+              heading.style.display = 'none';
+            }
+          });
+
+          // --- 5. Update Count ---
+          countSpan.textContent = visibleCount;
+        };
+        
+        /**
+         * Helper to get checked values for a filter group
+         */
+        const getSelectedValues = (groupName) => {
+          const checkboxes = document.querySelectorAll(`.filter-control[data-filter-group="${groupName}"]:checked`);
+          return Array.from(checkboxes).map(cb => cb.value);
+        };
+        
+        /**
+         * Helper to check if an item matches a filter group
+         * Logic: If no filters are selected in a group, it's a match (show all).
+         * If filters are selected, the item must match at least one.
+         */
+        const checkGroupMatch = (selectedValues, itemDataList) => {
+          if (selectedValues.length === 0) {
+            return true; // No filter in this group, so it passes
+          }
+          if (!itemDataList) {
+            return false; // Item has no data for this group
+          }
+          const itemValues = itemDataList.split(',');
+          // Check if any of the item's values are in the selected list
+          return itemValues.some(itemValue => selectedValues.includes(itemValue));
+        };
+
+        // --- 6. Event Listeners ---
+        filterControls.forEach(control => {
+          control.addEventListener('change', applyFilters);
+        });
+        
+        resetBtn.addEventListener('click', () => {
+          // Uncheck all checkboxes
+          document.querySelectorAll('.filter-control[type="checkbox"]').forEach(cb => {
+            cb.checked = false;
+          });
+          // Reset year select
+          yearSelect.value = 'all';
+          // Re-apply filters (which will show all)
+          applyFilters();
+        });
+
+        // --- 7. Initial Load ---
+        applyFilters(); // Run on page load to set initial count
+        
+      });
+    </script>
+</body>
+</html>
